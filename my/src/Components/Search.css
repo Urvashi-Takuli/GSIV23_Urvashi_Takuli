@@ -1,19 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    color: #4286f4;
-    margin-top: 30px;
-    margin-bottom: 60px;
-}
-
-div {
-    text-align: center;
+.searchContainer {
     width: 80%;
     margin: 0 auto;
-}
+    display: flex;
+    flex-direction: row;
+} 
 
 input {
     width: 100%;
@@ -23,14 +13,19 @@ input {
     border: 1px solid #4e5766;
     box-shadow: 1px 0.5px #888888;
     font-size: 18px;
+    height: 10 !important;
+    flex: 1
 }
 
-button {
-    padding: 12px 10px;
-    width: 30%;
+.searchButton {
+    /* padding: 12px 10px; */
+    /* width: 30%; */
     border-radius: 4px;
     background-color: #4286f4;
     color: #ffffff;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 12px;
+    height: 10 !important; 
+    margin: 0 !important;
+    flex: 0.2
 }

@@ -1,57 +1,56 @@
 
 /*search component for movies*/
-import React, { Component } from "react";
-import "./Search.css";
-class Search extends Component {
-    state = {
-        searchValue: '',
-        movies: []
-    };
-    //handle the submit search request
-    handleSearch = () => {
-        this.makeApiCall(this.state.searchValue);
-    }
+import React, { useState } from "react";
+import IconButton from "@mui/material/IconButton";
+import Replay from '@mui/icons-material/Replay';
+export default function Search(props){
+    const { setSearchText, reset } = props;
+    const [searchValue, setSearchValue] = useState('');
     // to handle the search keyword
-    handleOnChange = event => {
-        this.setState({ searchValue: event.target.value });
+    function handleOnChange(event) {
+        setSearchValue(event.target.value);
     };
-    // function to call the API to fetch results
-    makeApiCall = searchInput => {
-        var searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
-        fetch(searchUrl)
-            .then(response => {
-                return response.json();
-            })
-            .then(jsonData => {
-                this.setState({ movies: jsonData.meals });
-            });
+    function resetValue() {
+        reset();
+        setSearchValue('');
     };
-    render() {
-        return (
-            <div>
-                <h1>Welcome to the meal search app</h1>
-                <input
-                    name="text"
-                    type="text"
-                    placeholder="Search"
-                    onChange={event => this.handleOnChange(event)}
-                    value={this.state.searchValue}
-                />
-                <button onClick={this.handleSearch}>Search</button>
-                {this.state.movies ? (
-                    <div>
-                        {this.state.movies.map((meal, index) => (
-                            <div key={index}>
-                                <h1>{meal.strMeal}</h1>
-                                <img src={meal.strMealThumb} alt="meal-thumbnail" />
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <p>Try searching for a movie</p>
-                )}
-            </div>
-        );
-    }
+    return (
+        <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignSelf: "center",
+            width: '80%',
+            margin: '0 auto',
+        }}>
+            <input
+                style={{
+                    flex: 0.8,
+                    height: 34,
+                    borderRadius: 5,
+                    border: '1px solid #4e5766',
+                    boxShadow: '1px 0.5px #07090d',
+                    backgroundColor: '#cdd5e3',
+                    color: '#151b26'
+                }}
+                name="text"
+                type="text"
+                placeholder="Search"
+                onChange={event => handleOnChange(event)}
+                value={searchValue}
+            />
+            <button style={{
+                flex: 0.2,
+                height: 40,
+                marginLeft: 2,
+                borderRadius: 5,
+                borderColor: '313f58',
+                backgroundColor: '#151b26',
+                color: '#c0cadc'
+            }}
+                onClick={() => setSearchText(searchValue)}>Search</button>
+            <IconButton onClick={resetValue}>
+                    <Replay sx={{ color: '#6880ab' }} />
+            </IconButton>
+        </div>
+    );
 }
-export default Search;
