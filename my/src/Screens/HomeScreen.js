@@ -3,6 +3,7 @@ import PaginationComponent from "../Components/PaginationComponent";
 import CardGrid from "../Components/CardGrid";
 import axiosInstance from "../APIConfig";
 import {useNavigate} from "react-router-dom";
+import Header from "../Components/Header";
 
 function HomeScreen() {
     const [pageNumber, setPageNumber] = useState(1);
@@ -30,7 +31,7 @@ function HomeScreen() {
     return (
         <div style={{}}>
             {console.log("movies Data-----------", activeMovie)}
-            <p>hello there</p>
+            <Header/>
             <PaginationComponent
                 totalPages={pageCount}
             />
