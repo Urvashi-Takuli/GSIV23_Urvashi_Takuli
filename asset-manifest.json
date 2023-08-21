@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.740101c0.css",
-    "main.js": "/static/js/main.9a8e635a.js",
-    "static/js/787.60235f71.chunk.js": "/static/js/787.60235f71.chunk.js",
-    "index.html": "/index.html",
-    "main.740101c0.css.map": "/static/css/main.740101c0.css.map",
-    "main.9a8e635a.js.map": "/static/js/main.9a8e635a.js.map",
-    "787.60235f71.chunk.js.map": "/static/js/787.60235f71.chunk.js.map"
+    "main.css": "/GSIV23_Urvashi_Takuli/static/css/main.740101c0.css",
+    "main.js": "/GSIV23_Urvashi_Takuli/static/js/main.d346415e.js",
+    "static/js/787.60235f71.chunk.js": "/GSIV23_Urvashi_Takuli/static/js/787.60235f71.chunk.js",
+    "index.html": "/GSIV23_Urvashi_Takuli/index.html",
+    "main.740101c0.css.map": "/GSIV23_Urvashi_Takuli/static/css/main.740101c0.css.map",
+    "main.d346415e.js.map": "/GSIV23_Urvashi_Takuli/static/js/main.d346415e.js.map",
+    "787.60235f71.chunk.js.map": "/GSIV23_Urvashi_Takuli/static/js/787.60235f71.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.740101c0.css",
-    "static/js/main.9a8e635a.js"
+    "static/js/main.d346415e.js"
   ]
 }
